@@ -16,13 +16,23 @@ export default function Parent() {
     setChilddata(childdata);
   };
 
+  const childToParentAlert = () => {
+    alert(
+      "This is an alert from the Child Component passed from Parent Component."
+    );
+  };
+
   return (
     <div className="App">
       <div>
         <Button primary onClick={() => parentToChild()}>
           Click Parent
         </Button>
-        <Child parentToChild={data} childToParent={childToParent} />
+        <Child
+          parentToChild={data}
+          childToParent={childToParent}
+          childToParentAlert={childToParentAlert}
+        />
         {childdata}
       </div>
     </div>

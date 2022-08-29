@@ -9,7 +9,13 @@ export default function Child(props) {
       {props.parentToChild}
       <br />
       <br />
-      <Button primary onClick={() => props.childToParent(childdata)}>
+      <Button
+        primary
+        onClick={() => {
+          props.childToParent(childdata);
+          props.childToParentAlert();
+        }}
+      >
         Click Child
       </Button>
     </div>
